@@ -996,7 +996,7 @@ void update7SEG(int index){
 0800075c <HAL_TIM_PeriodElapsedCallback>:
 
 int dot_status = 0;
-int counter = 50;
+int counter = 25;
 int counter2 = 100;
 // index_led = enable
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
@@ -1021,9 +1021,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  800077a:	681b      	ldr	r3, [r3, #0]
  800077c:	2b00      	cmp	r3, #0
  800077e:	dc12      	bgt.n	80007a6 <HAL_TIM_PeriodElapsedCallback+0x4a>
-		counter = 50;
+		counter = 25;
  8000780:	4b10      	ldr	r3, [pc, #64]	; (80007c4 <HAL_TIM_PeriodElapsedCallback+0x68>)
- 8000782:	2232      	movs	r2, #50	; 0x32
+ 8000782:	2219      	movs	r2, #25
  8000784:	601a      	str	r2, [r3, #0]
 		if(index_led >= MAX_LED) index_led = 0;
  8000786:	4b11      	ldr	r3, [pc, #68]	; (80007cc <HAL_TIM_PeriodElapsedCallback+0x70>)
@@ -1058,7 +1058,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  80007b6:	4806      	ldr	r0, [pc, #24]	; (80007d0 <HAL_TIM_PeriodElapsedCallback+0x74>)
  80007b8:	f000 fbc8 	bl	8000f4c <HAL_GPIO_TogglePin>
 	}
-
 }
  80007bc:	bf00      	nop
  80007be:	3708      	adds	r7, #8

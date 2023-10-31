@@ -359,14 +359,14 @@ void update7SEG(int index){
 }
 
 int dot_status = 0;
-int counter = 50;
+int counter = 25;
 int counter2 = 100;
 // index_led = enable
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	counter--;
 	counter2--;
 	if(counter <= 0){
-		counter = 50;
+		counter = 25;
 		if(index_led >= MAX_LED) index_led = 0;
 		update7SEG(index_led++);
 	}
@@ -375,7 +375,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		counter2 = 100;
 		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 	}
-
 }
 /* USER CODE END 4 */
 
